@@ -1,0 +1,41 @@
+<!-- components -->
+<component name="$font" comment="color hoverColor fontSize" dArgs="black black 2rem" sunder="c_$1 :h:c_$2 ftsz_$3">
+</component>
+
+<component name="$resp" comment="defaultSize largeSize mediumSize smallSize" dArgs="1rem 1rem .5rem .25rem" sunder="ftsz_$1 (lg)[ftsz_$2] (md)[ftsz_$3] (sm)[ftsz_$4]">
+</component>
+
+<component name="$input" comment="fontColor borderColor hoverShadow shadowBorderSize" dArgs="red aqua aquamarine 1rem" sunder="c_$1 b_2px`solid`$2 :f:out_none:b_2px`solid`$4:bsh_0`0`0`calc($4*.2)`rgb($3,25%) trndu_.4s brad_5px">
+</component>
+
+<component name="$btn" comment="background border shadow shadowOpactiy shdaowSize" dArgs="red blue cyan 25 1rem" sunder="bg_$1 brad_.1rem b_2px`solid`$2 bsh_0`0`0`$5`rgb($3,$4%)">
+</component>
+
+<component name="$filter" dArgs="" sunder="filter_hue-rotate(var(--hr))`invert(var(--in))`grayscale(var(--gs))`blur(var(--bl))`opacity(var(--op))`contrast(var(--cn))`brightness(var(--bh)) --op_1 --bl_0 --gs_0 --in_0 --bh_1 --cn_1 --hr_0">
+    <component name="$hue" dArgs="0" sunder="--hr_$1deg"></component>
+    <component name="$opacity" dArgs="1" sunder="--op_$1%"></component>
+    <component name="$bw" dArgs="0" sunder="--gs_$1%"></component>
+    <component name="$invert" dArgs="0" sunder="--in_$1%"></component>
+    <component name="$blur" dArgs="0" sunder="--bl_$1"></component>
+    <component name="$contrast" dArgs="0" sunder="--cn_$1%"></component>
+    <component name="$bright" dArgs="0" sunder="--bh_$1%"></component>
+</component>
+
+<component name="$transform" dArgs="" sunder="tr_translate"></component>
+
+<animation name="&spin" dArgs="red blue cyan">
+    <state name="from" sunder="c_$1 bg_$3"></state>
+    <state name="to" sunder="c_$2 bg_$1"></state>
+</animation>
+
+<animation name="&bounce" dArgs="red blue">
+    <state name="0%" sunder="c_$1"></state>
+    <state name="50%" sunder="c_$2"></state>
+    <state name="100%" sunder="c_$1"></state>
+</animation>
+
+<animation name="&float" dArgs="0rem 10rem">
+    <state name="0%" sunder="tr_translateY($1)"></state>
+    <state name="50%" sunder="tr_translateY($2)"></state>
+    <state name="100%" sunder="tr_translateY($1)"></state>
+</animation>
