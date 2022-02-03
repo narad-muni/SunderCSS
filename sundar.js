@@ -220,33 +220,37 @@ function run(allElements = document.querySelectorAll('*')){
 
 run();
 
+if(document.getElementsByName("autoRender")[0].content=="true"){
+
 MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
-var observer = new MutationObserver(function(mutations) {
-    elementList = [];
-    mutations.forEach(element => {
-        if((element.target.tagName != "STYLE" && element.target.tagName != "SCRIPT" && element.target.tagName != "HEAD" && element.target.tagName != "HTML")){
-            if(element.type=="childList"){
-                element.addedNodes.forEach(element2 => {
-                    try{
-                        if(element2.getAttribute('sunder')){
-                            elementList.push(element2);
-                        }
-                    }catch{}
-                });
-            }else if(element.type=="attributes"){
-                elementList.push(mutations[0].target);
+    var observer = new MutationObserver(function(mutations) {
+        elementList = [];
+        mutations.forEach(element => {
+            if((element.target.tagName != "STYLE" && element.target.tagName != "SCRIPT" && element.target.tagName != "HEAD" && element.target.tagName != "HTML")){
+                if(element.type=="childList"){
+                    element.addedNodes.forEach(element2 => {
+                        try{
+                            if(element2.getAttribute('sunder')){
+                                elementList.push(element2);
+                            }
+                        }catch{}
+                    });
+                }else if(element.type=="attributes"){
+                    elementList.push(mutations[0].target);
+                }
             }
+        });
+        if(elementList.length > 0){
+            run(elementList);
         }
     });
-    if(elementList.length > 0){
-        run(elementList);
-    }
-});
 
-observer.observe(document.querySelectorAll('body')[0], {
-    subtree: true,
-    attributes: true,
-    childList: true,
-    attributeFilter: ['sunder'] 
-});
+    observer.observe(document.querySelectorAll('body')[0], {
+        subtree: true,
+        attributes: true,
+        childList: true,
+        attributeFilter: ['sunder'] 
+    });
+
+}

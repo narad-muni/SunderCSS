@@ -151,22 +151,31 @@ does sundar css supports react , vue , angular etc...
 
 Yes up untill now it does supports them all.
 
-Dynamic classes can be re rendered by calling `run()` in javascript.
-Re rendering will only render required components. And it will usually take as less as 2ms depending on utilities.
+Dynamic classes will be automatically rendered;(disabled by default)
+
+To enable re rendering use : 
+
+```html
+<meta name="autoRender" content="true">
+```
+in your head tag.
+
+Re rendering will only render required components. And it will take as less as 5ms depending on utilities.
+
+or if you manually want to re render then just call `run()` to re render whole body or pass the element or element list to re render required elements eg `run(document.getElementsByTagName(body)[0])`.
 
 If you dont want to call javascript everytime , then you can use
 
 ```html
 <adi sunder="bg_red" >
 ```
-
-which will add bg_red to css and remove adi tag. So you must know which classes will you require in future to use this feature.
+which will add bg_red to css and remove adi tag. So you must know which classes will you require in future to use this feature.(faster than re rendering but requires extra effort).
 
 # TLDR;
 
 Check this example out ...
 
-[Sundar Css Demo](www.google.com/iphone.html)
+[Sundar Css Demo](https://narad-muni.github.io/sunder%20demo/iphone.html)
 
 Sundar will be releasing soon ... stay tuned ! :P
 
