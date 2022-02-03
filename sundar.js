@@ -218,8 +218,6 @@ function run(allElements = document.querySelectorAll('*')){
     console.timeEnd();
 }
 
-run();
-
 if(document.getElementsByName("autoRender")[0].content=="true"){
 
 MutationObserver = window.MutationObserver || window.WebKitMutationObserver;

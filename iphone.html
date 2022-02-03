@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="autoRender" content="false">
+    <meta name="autoRender" content="true">
     <title>सुदंर CSS | iphone</title>
     <script src="./lessCompiler.js" ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-
     </style>
 </head>
 <body sunder="bg_#bdd9f5 m_0 p_0 font-family_'Assistant',`sans-serif ov_hidden">
-    <div id="main" sunder="dis_flex w_fit-content mx_auto position_relative top_-100vh trndu_2s a_&float_$_2rem`5s`ease`infinite">
+    <div id="loader">
+        <div sunder="position_absolute h_100% w_100% bg_#d65076 z_5 dis_grid pli_center">
+            <p sunder="c_white ftw_900 ftsz_3rem">Loading Awesomeness ...</p>
+        </div>
+    </div>
+    <div id="main" sunder="dis_flex w_fit-content mx_auto position_relative top_-100vh trndu_2s a_&float_2rem_5rem`5s`ease`infinite">
         <div sunder="position_relative dis_flex fd_column w_.2rem h_fit-content top_2rem">
             <div sunder="position_relative w_100% mt_1rem h_2rem bg_#fad7bd bsh_0`0`1px`grey z_2 top_5rem"></div>
             <div sunder="position_relative w_100% mt_1rem h_3rem bg_#fad7bd bsh_0`0`1px`grey z_2 top_5rem"></div>
@@ -121,14 +125,17 @@
     <script src="./vinyas.js"></script>
     <script src="./sundar.js"></script>
     <script>
+        run(document.querySelector("body"));
+        run(document.getElementById("loader").getElementsByTagName("*"));
         window.onload = function(){
             setTimeout(function(){
+                run();
+                document.getElementById("loader").children[0].setAttribute("sunder","position_absolute h_100% trndu_1s w_100% z_0 dis_grid pli_center $filter $opacity_0");
                 var sunder = document.getElementById("main").getAttribute("sunder").split(" ");
-                sunder.push("top_3vw");
                 sunder.splice(sunder.indexOf("top_-100vh"),1);
                 document.getElementById("main").setAttribute("sunder",sunder.join(" "));
             }
-            ,200);
+            ,500);
         };
     </script>
 
