@@ -37,7 +37,7 @@ function generateAnimation(sunder){
 
     outSunder += "}";
 
-    addSunder(outSunder);
+    completeSunder += outSunder;
 
     returnName[0] = returnName[0].replaceAll(/(\&|\$|\@)/g,'\\$&');
     returnName = returnName.join("`");
