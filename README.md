@@ -1,4 +1,4 @@
-# सुदंर CSS (Beautiful CSS)
+# सुंदर CSS (Beautiful CSS)
 
 Sunder css is atomic css like library , but with pros of component based libraries.
 
